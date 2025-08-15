@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Clickbar\Magellan\Data\Geometries\Point;
 use Illuminate\Database\Eloquent\Model;
 
 class RawPosition extends Model
@@ -19,6 +20,7 @@ class RawPosition extends Model
     ];
 
     protected $casts = [
+        'posicion' => Point::class,
         'online' => 'boolean',
         'aire' => 'boolean',
         'hora_api' => 'datetime:H:i:s',
